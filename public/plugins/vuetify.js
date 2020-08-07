@@ -1,0 +1,1 @@
+const vuetify = new Vuetify()

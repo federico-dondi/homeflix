@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="content-language" content="en">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+  <!-- Vuetify -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.3.45/css/materialdesignicons.min.css" integrity="sha256-nwNjrH7J9zS/Ti4twtWX7OsC5QdQHCIKTv5cLMsGo68=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@2.3.2/dist/vuetify.min.css" integrity="sha256-QZKUg9B2f6/LnWc1RNHeoJZOFJNr6NomjZD5h0OCcQA=" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="styles.css">
+  
+  <title>homeflix</title>
+</head>
+
+<body>
+  <noscript>We're sorry but the application doesn't work properly without JavaScript enabled.</noscript>
+
+  <div id="app">
+    <v-app>
+      <v-main>
+        <v-container>
+          <h4>🍿 Self-hosted streaming service (Netflix-like), over LAN.</h4>
+          <h4 class="font-weight-regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, voluptatibus totam quibusdam autem sint odio sit, esse quod magnam placeat provident quia, corporis aliquid aspernatur illo deserunt. Nisi, nostrum rerum?</h4>
+
+          <router-view></router-view>
+        </v-container>
+      </v-main>
+    </v-app>
+  </div>
+
+  <!-- Vue & Vue-Router -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js" integrity="sha256-ngFW3UnAN0Tnm76mDuu7uUtYEcG3G5H1+zioJw3t+68=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuex@3.5.1/dist/vuex.min.js" integrity="sha256-3byDlviIHAHhQVNP3gS8Z/3bcGL5+Oox2QPowjbFv68=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-router@3.3.4/dist/vue-router.min.js" integrity="sha256-87g98o5+aw7/ExJ9tBjvH8zz46FJ7hiylPtNFcPvsSw=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.3.2/dist/vuetify.min.js" integrity="sha256-I5AO1J9kzL2U8BjfDsnis6TJjet13YtLQbHMsR+1XCY=" crossorigin="anonymous"></script>
+
+  <script src="views/MoviesCatalogue.js"></script>
+  <script src="components/MovieCard.js"></script>
+  <script src="components/MovieCardRating.js"></script>
+  <script src="views/MovieView.js"></script>
+
+  <script src="plugins/router.js"></script>
+  <script src="plugins/store.js"></script>
+  <script src="plugins/vuetify.js"></script>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
