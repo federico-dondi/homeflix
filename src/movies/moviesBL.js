@@ -22,3 +22,23 @@ module.exports.readMovies = function () {
 module.exports.readMovie = function (id) {
   return movies[id]
 }
+
+module.exports.createMovie = async function (file) {
+  const name = file.name.split('.')[0]
+  const extension = file.name.split('.')[1]
+
+  const id = parseInt(name)
+
+  if (Number.isNaN(id)) throw new Error('Identifier not valid.')
+  if (id === Number.POSITIVE_INFINITY) throw new Error('Identifier not valid.')
+  if (id === Number.NEGATIVE_INFINITY) throw new Error('Identifier not valid.')
+  if (id < 0) throw new Error('Identifier not valid.')
+  if (movies[id]) throw new Error('Identifier not unique.')
+
+  await file.mv(process.env.MOVIES_PATH + `${name}.${extension}`)
+
+  return movies[id] = new Movie(
+    id,
+    extension
+  )
+}
