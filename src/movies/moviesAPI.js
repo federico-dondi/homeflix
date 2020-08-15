@@ -5,7 +5,8 @@ const express = require('express')
 
 const {
   readMovie,
-  readMovies
+  readMovies,
+  createMovie
 } = require('./moviesBL')
 
 const router = express.Router()
@@ -19,6 +20,25 @@ router.route('/')
       message: 'Ok.',
       data
     })
+  })
+  .post(async (req, res) => {
+    const file = req.files.movie
+
+    try {
+      const data = await createMovie(file)
+
+      res.status(201).json({
+        status: 201,
+        message: 'Created.',
+        data
+      })
+    } catch ({ message }) {
+      res.status(422).json({
+        status: 422,
+        message,
+        data: undefined
+      })
+    }
   })
 
 router.route('/:id')
